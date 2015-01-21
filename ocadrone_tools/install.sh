@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# OCADrone installer
+# OCADrone installer - install
 # Copyright (C) 2015 Jean-Philippe Clipffel
 # Email: jp.clipffel@gmail.com
 #
@@ -19,9 +19,22 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
 # USA
 
+
+# About
+# =====
+# This script is a part of OCADrone installer tools. It can install the whole
+# OCADrone tools set, including libraries, servers, system daemons, ...
+# This script can work on all Linux distribution. The requierments are:
+# - bash (sh is NOT supported)
+# - git
+# - svn
+# - common GNU utils
+# - a network access
+
+
 # Variables
 # =========
-INCL="./include"
+INCL="../include"
 SRCS[0]="$INCL/variables.sh"
 SRCS[1]="$INCL/functions.sh"
 SRCS[2]="$INCL/install_tools.sh"
