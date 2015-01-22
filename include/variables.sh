@@ -42,6 +42,21 @@ TEMP="/tmp/ocadrone/installer"
 
 
 
+# ==============================
+# OCADRONE RASPBIAN CONFGURATION
+# ==============================
+OS_GROUP="ocadrone"
+OS_USERNAME="ocadrone"
+OS_HOME="/ocadrone"
+OS_SHELL="/bin/bash"
+OS_PROFILE="profile"
+OS_BASHRC="bashrc"
+OS_SSHDCONFIG="sshd_config"
+OS_RCCONFIG="rcconf.cfg"
+
+
+
+
 # =========================
 # OCADRONE TOOLS INSTALLER
 # ========================
@@ -77,14 +92,14 @@ SIGNAL_GIT="https://github.com/ocadrone/Signal"
 # VIRTUAL MACHINE OPTIONS
 # =======================
 QEMU="qemu-system-arm"
-QEMU_KERNEL="kernel-qemu"
+QEMU_KERNEL="kernel-qemu.bin"
 QEMU_CPU="arm1176"
 QEMU_RAM="256"
 QEMU_OPTS="-M versatilepb -no-reboot -serial stdio"
 QEMU_APPEND="root=/dev/sda2 panic=1 rootfstype=ext4 rw"
 QEMU_IMAGE="OCADroneOS.img"
-QEMU_REDIR_HOST=""
-QEMU_REDIR_GUEST=""
+QEMU_REDIR_HOST="5010"
+QEMU_REDIR_GUEST="2342"
 QEMU_OSTYPE="ocadrone"
 QEMU_MODE="default"
 

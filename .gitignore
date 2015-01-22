@@ -1,0 +1,14 @@
+# Gitignore configuration for OCADrone Installer
+
+# Ignore virtual machine files
+*.img
+*.iso
+
+# Ignore explicit binary files
+*.bin
+
+# Ignore IDS project files
+*.sublime*
+
+# Ingore indev code
+indev/**

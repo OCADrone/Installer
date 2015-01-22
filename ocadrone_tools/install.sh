@@ -68,6 +68,11 @@ function init_hierarchy()
   if [ ! -d "$OCADRONE_ROOT" ]; then mkdir "$OCADRONE_ROOT"; fi
   if [ ! -d "$OCADRONE_APPS" ]; then mkdir "$OCADRONE_APPS"; fi
   if [ ! -d "$OCADRONE_LOGS" ]; then mkdir "$OCADRONE_LOGS"; fi
+
+  if is_user "$OS_USERNAME"; then
+    print INFO "user '$OS_USERNAME' found, chown-ing '$OCADRONE_ROOT'"
+    chown -R "$OS_USERNAME" "$OCADRONE_ROOT"
+  fi
 }
 
 

@@ -162,7 +162,7 @@ function start_default()
 {
   # Setup network redirection for SSH
   if [ -n "$QEMU_REDIR_HOST" ] && [ -n "$QEMU_REDIR_GUEST" ]; then
-    local redir="-redir tcp:$QEMU_REDIR_HOST::$QEMU_REDIR_GUEST"
+    local redir="tcp:$QEMU_REDIR_HOST::$QEMU_REDIR_GUEST"
   fi
 
   # Control
@@ -171,7 +171,7 @@ function start_default()
   # Run VM
   $QEMU -kernel "$QEMU_KERNEL" -cpu "$QEMU_CPU" -m "$QEMU_RAM" \
   -M versatilepb -no-reboot -serial stdio \
-  -append "$QEMU_APPEND" -hda "$QEMU_IMAGE"
+  -append "$QEMU_APPEND" -hda "$QEMU_IMAGE" -redir "$redir"
 }
 
 # Start VM

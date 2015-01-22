@@ -80,6 +80,15 @@ function is_root()
   return 0
 }
 
+# Check if user exists
+# $1 : User name
+function is_user()
+{
+  if id -u "$1" &> /dev/null; then
+    return 0
+  return 1
+}
+
 # Check if a directory is empty or not
 # $1 : directory to check
 function is_dir_empty()

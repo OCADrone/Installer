@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Colors variables
+BHC_BLACK='\[\033[30m\]'
+BHC_RED='\[\033[31m\]'
+BHC_GREEN='\[\033[32m\]'
+BHC_ORANGE='\[\033[33m\]'
+BHC_BLUE='\[\033[34m\]'
+BHC_MAGENTA='\[\033[35m\]'
+BHC_CYAN='\[\033[36m\]'
+BHC_WHITE='\[\033[37m\]'
+BHC_DFLT='\[\033[0m\]'
+
+# PS1 settings
+if [ "$USER" = "ocadrone" ]; then
+	export PS1="${BHC_GREEN}OCA${BHC_BLUE}Drone$BHC_DFLT@\w: "
+else
+    if [ "$USER" = "root" ]; then
+	export PS1="$BHC_RED\u$BHC_ORANGE[$HOSTNAME]$BHC_DFLT@$BHC_ORANGE\w$BHC_DFLT: "
+    fi
+fi
+
+# PS2 settings
+export PS2="-> "
+
+# Environement variables
+export EDITOR='nano'
+export HISTSIZE=1000
+export PAGER='less'
+export SAVEHIST=1000
+export WATCH='all'
+
+# Load system environment
+if [ -f /etc/environment ]; then
+   source /etc/environment
+fi
+
+# Loading bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Setting default directory
+if [ "$PWD" = "/" ]; then
+    cd $HOME
+fi
